@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 25% 1fr; /* 25% for the hero section, 1fr for the grid */
+    height: 100vh;
+}
+
+.hero-section {
+    background: #3498db; /* Change the color as desired */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-section img {
+    width: 100%;
+    border-radius: 50%; /* Make the image circular */
+    margin-bottom: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for the grid */
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.grid-item.expanded .card {
+    transform: rotateY(180deg);
+}
+
+.grid-item.expanded {
+    position: fixed;
+    top: 8px;
+    left: 428px;
+    width: 75vw;
+    height: 98vh;
+    z-index: 1;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card-inner.expanded {
+    transform: rotateY(180deg) scale(0.5);
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background-color: #3498db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-back {
+    background-color: #2ecc71;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+}
+
+.card-text {
+    text-align: center;
+    color: #fff;
+}
+
+.card-text a {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    padding: 5px 10px;
+}
+
+.card-text a:hover {
+    background: #fff;
+    color: #333;
+}
+.grid-item:nth-child(odd) .card-back {
+    background-color: #e74c3c; /* Red */
+}
+
+.grid-item:nth-child(even) .card-back {
+    background-color: #2ecc71; /* Green */
+}
+
+.grid-item:nth-child(3n) .card-back {
+    background-color: #f39c12; /* Yellow */
+}
+
+.grid-item:nth-child(4n) .card-back {
+    background-color: #3498db; /* Blue */
+}
+
+.grid-item:nth-child(5n) .card-back {
+    background-color: #9b59b6; /* Purple */
+}
+
+.grid-item:nth-child(6n) .card-back {
+    background-color: #ecf0f1; /* Light Gray */
+}
