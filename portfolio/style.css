@@ -1,7 +1,14 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Pixelify Sans', sans-serif;
+    background: linear-gradient(160deg, rgb(147, 253, 8) , rgb(227, 255, 160) , rgb(227, 255, 160) ,rgb(94, 255, 0) );
+    /* background-image: url('plane.jpg'); */
+    /* background: #DAD299;  
+    background: -webkit-linear-gradient(to right, #B0DAB9, #DAD299);  
+    background: linear-gradient(to right, #B0DAB9, #DAD299); 
+
+    background-image: linear-gradient(90deg, #d4fc79 30%, #96e6a1 100%); */
 }
 
 .container {
@@ -15,13 +22,16 @@ body {
     text-decoration: none;
 }
 
+
 .hero-section a:hover {
     transform: scale(1.5); /* Make the link slightly larger */
     opacity: 0.8; /* Make it slightly transparent */
     transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out; /* Add transitions */
     text-decoration: underline;
     color: blue;
+    /* cursor: pointer; */
   }
+
   
 .fa {
     padding: 2px;
@@ -42,10 +52,30 @@ body {
     align-items: center;
     font-size: 1 em;
     justify-content: center;
-    background: linear-gradient(to right, rgb(147, 255, 7), rgb(227, 255, 160));
+    /* background: linear-gradient(to right, rgb(147, 253, 8), rgb(227, 255, 160)); */
 
 }
-
+.backchod{
+    font-size: larger;
+}
+.backchod p {
+    transform: scale(1); /* Initial scale */
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .backchod p:hover {
+    transform: scale(1.2); /* Enlarged scale */
+  }
+  
+  /* Trigger animation on website load as in approach 1 */
+  body:first-child .backchod p:not(:hover) {
+    &:hover {
+      opacity: 0;
+    }
+    &:hover + label {
+      display: none;
+    }
+  }
 .hero-section img {
     width: 100%;
     max-width: 200px;
@@ -66,7 +96,7 @@ body {
     grid-gap: 20px;
     padding: 20px;
     
-    background: linear-gradient(to right, rgb(227, 255, 160),rgb(94, 255, 0));
+    /* background: linear-gradient(to right, rgb(227, 255, 160),rgb(94, 255, 0)); */
 
   }
   
@@ -76,7 +106,7 @@ body {
     overflow: hidden;
     cursor: pointer;
     perspective: 1000px;
-    border: 5px outset #000000;
+    border: 6px outset #000000;
     border-radius: 15px;
 }
 
@@ -170,47 +200,8 @@ body {
     background-color: #f6fa06; /* Light Gray */
 }
 
-/* 
-@media screen and (max-width: 768px) {
-    .container {
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .hero-section {
-      padding: 10px;
-      text-align: center;
-      font-size: 0.8em;
-    }
-  
-    .hero-section img {
-      display: none;
-    }
 
-    .grid {
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .grid-item {
-      margin-bottom: 20px;
-      width: 100%;
-      height: 80%;
-      
-    }
-  
-    .card {
-      height: 0;
-      padding-bottom: 100%;
-    }
-  
-    .card-inner {
-      height: 100%;
-    }
-} 
 
-/* Media Query for Mobile Devices */
 @media screen and (max-width: 768px) {
     .container {
         display: flex;
@@ -224,13 +215,16 @@ body {
     }
 
     .hero-section img {
-        /* display: none; */
+        
         border-radius: 50%;
         max-width: 100px;
-        display: block;
+        display: none;
 
     }
 
+    .backchod{
+        display: none;
+    }
     .grid {
         padding: 10px;
         display: flex;
@@ -303,8 +297,8 @@ body {
         background: #fff;
         color: #333;
     }
-
+/* 
     .grid-item.expanded .card-back {
-        background-color: #3498db; /* Set the background color when flipped */
-    }
+        background-color: #3498db; 
+    } */
 }
